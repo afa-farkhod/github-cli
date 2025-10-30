@@ -1,9 +1,9 @@
 # github-cli
 GitHub CLI — query a release by tag
 
-- Use this tiny script, reliable snippet when you want to fetch the facts for a specific release tag—exactly what GitHub shows on the release page—without scraping HTML or looping through every release.
+- Use this tiny script, reliable snippet when you want to fetch the facts for a specific release tag—exactly what GitHub shows on the release page — without scraping HTML or looping through every release.
 
-## What this does
+## ❓What this does
 
 - Queries the GitHub REST API for `REPO`’s release with exact tag `TAG`.
 - Prints a clean JSON with only the important fields:
@@ -13,7 +13,7 @@ GitHub CLI — query a release by tag
   - `published_at` — when it became public; GitHub UI “X hours ago” is based on this
   - `html_url` — direct link to the release page
 
-## Example output:
+## 💻 Example output:
 
 ```
 set -euo pipefail
