@@ -13,3 +13,18 @@ GitHub CLI — query a release by tag
   - `published_at` — when it became public; GitHub UI “X hours ago” is based on this
   - `html_url` — direct link to the release page
 
+## Example output:
+
+```
+set -euo pipefail
+REPO=MystenLabs/walrus # => example repo
+TAG=mainnet-v1.35.2    # => example tag
+
+if ! out="$(gh api "repos/${REPO}/releases/tags/${TAG}" 2>/dev/null)"; then
+  echo "Release tag not found: ${REPO}@${TAG}" >&2
+  exit 1
+fi
+jq '{tag: .tag_name, draft, prerelease, created_at, published_at, html_url}' <<<"$out"
+```
+
+<img width="657" height="145" alt="image" src="https://github.com/user-attachments/assets/520f730a-a4fb-44ea-bf3d-27e3460ca5ce" />
