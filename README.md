@@ -39,9 +39,6 @@ jq '{tag: .tag_name, draft, prerelease, created_at, published_at, html_url}' <<<
 
 - Why `created_at` vs `published_at` matters?
   - check relevant issue at [Stackoverflow](https://stackoverflow.com/questions/59319281/github-action-different-between-release-created-and-published)
-
-created_at: when the release record (often a draft) was created.
-
-published_at: when the release was made public.
-➜ GitHub’s UI ordering and “X hours ago” are based on published_at, not created_at.
-This explains cases where a testnet release appears newer despite an older created_at.
+  - `created_at`: when the release record (often a draft) was created.
+  - `published_at`: when the release was made public.
+  - 💡 GitHub’s UI ordering and `X hours ago` are based on `published_at`, not `created_at`. This explains cases where a testnet release appears newer despite an older `created_at`.
